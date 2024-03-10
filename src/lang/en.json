@@ -48,7 +48,8 @@
   "city": {
     "gdz": "Grudziadz",
     "inWaw": "in Warsaw",
-    "inGda": "w Gdansk"
+    "inGda": "in Gdansk",
+    "inGru": "in Grudziadz"
   },
   "country": {
     "pl": "Poland"
@@ -70,6 +71,9 @@
     },
     "flash-media": {
       "developer": "I had the opportunity to design, create, and maintain numerous web projects. My skills encompassed PHP, HTML, CSS, and JavaScript, and my work demonstrated professionalism and a commitment to quality in every project. Collaborating with graphic tools such as Photoshop and Illustrator, I developed eye-catching and practical solutions. Working at Flash-Media was a significant milestone in my career as a web developer, as it allowed me to gain valuable experience in designing and building various web projects while enhancing my programming and user interface design skills."
+    },
+    "info-biz": {
+      "itspecialist": "In collaboration with the educational agency, I was responsible for office-related tasks and preparing technological equipment for training sessions. I designed the agency's website and was in charge of purchasing necessary equipment for training purposes. Initially assisting in the implementation of training plans, I eventually gained the opportunity to independently conduct educational workshops on website design."
     }
   },
   "dates": {

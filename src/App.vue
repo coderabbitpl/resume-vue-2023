@@ -28,7 +28,7 @@
                   :initial="{ opacity: 0, y: -100, scale: 0.8 }"
                   class="resume-picture"
                 >
-                  <img alt="" class="img-fluid d-block" src="./assets/patryk-szram-ai.png" />
+                  <img alt="" class="img-fluid d-block" src="./assets/patryk-szram-real.png" />
                 </div>
               </div>
               <div class="col col-12 col-sm-7 col-md-6 col-lg-12">
@@ -308,6 +308,7 @@ import logoStabilis from '@/assets/logo-stabilis.png'
 import logoMoveCloser from '@/assets/logo-movecloser.png'
 import logoCodeRabbit from '@/assets/logo-coderabbit.png'
 import logoFlashMedia from '@/assets/logo-flash-media.png'
+import logoInfoBiz from '@/assets/logo-infobiz.png'
 
 const resumeReady = ref(false)
 
@@ -517,6 +518,25 @@ const data = reactive({
             current: false,
             end: computed(() => `${t('months.mar').slice(0, 3)} 2015`),
             start: computed(() => `${t('months.nov').slice(0, 3)} 2011`)
+          }
+        }
+      ]
+    },
+    {
+      companyName: 'Info-Biz Profesjonalna Edukacja',
+      companyLogo: logoInfoBiz,
+      companyColor: '#e10a12',
+      companyColorText: '#e73e10',
+      companyLocation: computed(() => `${t('city.inGru')}, ${t('country.pl')}`),
+      companyDate: computed(() => calculatePeriod('2009-06', '2011-11')),
+      positions: [
+        {
+          positionName: `IT Specialist`,
+          positionDesc: computed(() => t('jobs.info-biz.itspecialist')),
+          positionDate: {
+            current: false,
+            end: computed(() => `${t('months.nov').slice(0, 3)} 2011`),
+            start: computed(() => `${t('months.jun').slice(0, 3)} 2009`)
           }
         }
       ]

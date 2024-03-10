@@ -48,7 +48,8 @@
   "city": {
     "gdz": "Grudziądz",
     "inWaw": "w Warszawie",
-    "inGda": "w Gdańsku"
+    "inGda": "w Gdańsku",
+    "inGru": "w Grudziądzu"
   },
   "country": {
     "pl": "Polska"
@@ -70,6 +71,9 @@
     },
     "flash-media": {
       "developer": "Miałem okazję projektować, tworzyć i utrzymywać wiele projektów internetowych. Moje umiejętności obejmowały PHP, HTML, CSS i JavaScript, a moje działania wykazały profesjonalizm i dbałość o jakość w każdym projekcie. Współpracując z narzędziami graficznymi, takimi jak Photoshop i Illustrator, opracowałem przyciągające uwagę i praktyczne rozwiązania. Praca w Flash-Media była ważnym etapem mojej kariery jako web developera, ponieważ umożliwiła mi zdobycie cennego doświadczenia w projektowaniu i tworzeniu różnych projektów internetowych oraz rozwijanie moich umiejętności w programowaniu i projektowaniu interfejsów użytkownika."
+    },
+    "info-biz": {
+      "itspecialist": "We współpracy z agencją edukacyjną zajmowałem się obowiązkami dookoła biurowymi oraz przygotowywaniem sprzętu technologicznego do realizacji szkoleń. Zaprojektowałem stronę internetową agencji oraz odpowiadałem za zakup niezbędnego sprzętu do realizacji szkoleń. Początkowo asystując podczas realizacji planów szkoleniowych otrzymałem możliwość samodzielnego prowadzenia szkoleń edukacyjnych z zakresu projektowania stron internetowych."
     }
   },
   "dates": {

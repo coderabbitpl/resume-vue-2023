@@ -28,7 +28,20 @@
                   :initial="{ opacity: 0, y: -100, scale: 0.8 }"
                   class="resume-picture"
                 >
-                  <img alt="" class="img-fluid d-block" src="./assets/patryk-szram-real.png" />
+                  <template v-if="isDarkMode">
+                    <img
+                      alt=""
+                      class="img-fluid d-block"
+                      src="./assets/patryk-szram-real-dark.png"
+                    />
+                  </template>
+                  <template v-else>
+                    <img
+                      alt=""
+                      class="img-fluid d-block"
+                      src="./assets/patryk-szram-real-bright.png"
+                    />
+                  </template>
                 </div>
               </div>
               <div class="col col-12 col-sm-7 col-md-6 col-lg-12">
@@ -309,6 +322,7 @@ import logoMoveCloser from '@/assets/logo-movecloser.png'
 import logoCodeRabbit from '@/assets/logo-coderabbit.png'
 import logoFlashMedia from '@/assets/logo-flash-media.png'
 import logoInfoBiz from '@/assets/logo-infobiz.png'
+import { useDark } from '@vueuse/core'
 
 const resumeReady = ref(false)
 
@@ -323,6 +337,7 @@ enum RECAPTCHA_STATUS {
 }
 
 const recaptchaResponse = ref()
+const isDarkMode = ref(false)
 const recaptchaStatus = ref(RECAPTCHA_STATUS.PENDING)
 
 const { execute } = useChallengeV3('submit')
@@ -560,6 +575,11 @@ const sleep = (m: number) => new Promise((r) => setTimeout(r, m))
 
 const languageToggled = ref(false)
 
+useDark({
+  onChanged(isDark) {
+    isDarkMode.value = isDark
+  }
+})
 const onThemeChanged = () => {
   languageToggled.value = !languageToggled.value
   resumeReady.value = true

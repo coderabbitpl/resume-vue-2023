@@ -7,10 +7,21 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    BButton: typeof import('bootstrap-vue-next')['BButton']
-    BModal: typeof import('bootstrap-vue-next')['BModal']
-    RouterLink: typeof import('vue-router')['RouterLink']
-    RouterView: typeof import('vue-router')['RouterView']
-    TopHeader: typeof import('./src/components/TopHeader.vue')['default']
+    BButton: (typeof import('bootstrap-vue-next'))['BButton']
+    BModal: (typeof import('bootstrap-vue-next'))['BModal']
+    RouterLink: (typeof import('vue-router'))['RouterLink']
+    RouterView: (typeof import('vue-router'))['RouterView']
+    TopHeader: (typeof import('./src/components/TopHeader.vue'))['default']
+  }
+}
+
+export type LinksData = {
+  [key: string]: {
+    download?: string
+    target?: string
+    icon: string
+    style?: any
+    url: string
+    title?: string
   }
 }

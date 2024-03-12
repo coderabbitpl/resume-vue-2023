@@ -131,21 +131,25 @@
                 </ul>
 
                 <div v-if="recaptchaStatus === RECAPTCHA_STATUS.DONE" class="resume-social">
-                  <a
-                    v-for="(link, key, n) in data.social"
-                    :key="key"
-                    v-motion
-                    :delay="350 + 50 * n"
-                    :enter="{ opacity: 1, y: 0, scale: 1, rotate: 0 }"
-                    :hovered="{ scale: 1.2, rotate: 5 }"
-                    :href="link.url"
-                    :initial="{ opacity: 0, y: 100, rotate: -90 }"
-                    :style="link.style"
-                    :target="link.target"
-                    :title="link.title"
+                  <template
+                    v-for="(link, key, index) in data.social as LinksData"
+                    :key="link.url + key"
                   >
-                    <span :class="`bi ${link.icon} fs-2`"></span>
-                  </a>
+                    <a
+                      v-motion
+                      :delay="350 * index"
+                      :enter="{ opacity: 1, y: 0, scale: 1, rotate: 0 }"
+                      :hovered="{ scale: 1.2, rotate: 5 }"
+                      :href="link.url"
+                      :initial="{ opacity: 0, y: 100, rotate: -90 }"
+                      :style="link.style"
+                      :target="link.target"
+                      :title="link.title"
+                      :download.attr="link?.download"
+                    >
+                      <span :class="`bi ${link.icon} fs-2`"></span>
+                    </a>
+                  </template>
                 </div>
               </div>
             </div>
@@ -323,6 +327,7 @@ import logoCodeRabbit from '@/assets/logo-coderabbit.png'
 import logoFlashMedia from '@/assets/logo-flash-media.png'
 import logoInfoBiz from '@/assets/logo-infobiz.png'
 import { useDark } from '@vueuse/core'
+import type { LinksData } from '../components'
 
 const resumeReady = ref(false)
 
@@ -342,12 +347,11 @@ const recaptchaStatus = ref(RECAPTCHA_STATUS.PENDING)
 
 const { execute } = useChallengeV3('submit')
 
+const { t, locale: language } = useI18n({ useScope: 'global' })
+
 const positionTitle = 'Fullstack Web Developer'
 const contactPhone = ref('+48795884999')
 const contactEmail = ref('patryk@szram.co')
-const resumePdf = computed(() => `/patryk-szram-resume-en.pdf`)
-
-const { t, locale } = useI18n({ useScope: 'global' })
 const currentLocation = `${t('city.gdz')}, ${t('country.pl')}`
 
 function calculatePeriod(start: string, end: string) {
@@ -424,11 +428,12 @@ const data = reactive({
       title: 'linkedin.com/in/patryk-szram'
     },
     pdf: {
+      download: computed(() => `resume-szram-${language.value}.pdf`),
       target: '_self',
       icon: 'bi-download',
       style: { '--social-color': 'var(--brand-secondary)' },
-      url: resumePdf,
-      title: 'linkedin.com/in/patryk-szram'
+      url: computed(() => `/resume-szram-${language.value}.pdf`),
+      title: language.value === 'en' ? 'Download my resume in PDF' : 'Pobierz CV jako PDF'
     }
   },
   experience: [

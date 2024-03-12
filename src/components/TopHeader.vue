@@ -3,26 +3,27 @@
     <div class="container">
       <a class="navbar-brand mb-0 h1 text-light me-auto" href="/">szram.co</a>
       <ul class="navbar-nav align-items-center">
-        <li
-          v-for="(link, key, n) in prop.links"
-          :key="key"
-          v-motion
-          :delay="350 + 50 * n"
-          :enter="{ opacity: 1, y: 0, scale: 1, rotate: 0 }"
-          :initial="{ opacity: 0, y: 100, rotate: -90 }"
-          :style="link.style"
-          class="nav-item"
-        >
-          <a
-            :hovered="{ scale: 1.2, rotate: 5 }"
-            :href="link.url"
-            :target="link.target"
-            :title="link.title"
-            class="btn btn-link nav-link text-light"
+        <template v-for="(link, key, index) in prop.links" :key="link.url + key + 'head'">
+          <li
+            :style="link.style"
+            class="nav-item"
+            v-motion
+            :delay="350 * index"
+            :enter="{ opacity: 1, y: 0, scale: 1, rotate: 0 }"
+            :initial="{ opacity: 0, y: 100, rotate: -90 }"
           >
-            <span :class="`bi ${link.icon}`"></span>
-          </a>
-        </li>
+            <a
+              :href="link.url"
+              :target="link.target"
+              :title="link.title"
+              class="btn btn-link nav-link text-light"
+              :download.attr="link?.download"
+              :hovered="{ scale: 1.2, rotate: 5 }"
+            >
+              <span :class="`bi ${link.icon}`"></span>
+            </a>
+          </li>
+        </template>
         <li class="nav-item d-block">
           <div class="vr h-100 d-block mx-2"></div>
         </li>

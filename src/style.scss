@@ -1,7 +1,7 @@
 @use 'sass:math';
 
 @import 'app';
-@import 'fonts';
+//@import 'fonts';
 
 // Layout & components
 @import 'bootstrap/scss/root';
@@ -125,12 +125,55 @@ body {
 
 // Custom
 .resume-container {
-  padding: 5rem 0;
   margin: 0 auto;
   transition: 0.2s all ease;
+}
 
-  @media print {
-    padding: 1rem 0;
+.resume-profile {
+  padding-top: 3.5rem;
+}
+
+.resume-picture {
+  height: 100%;
+  width: 100%;
+  background: url('@/assets/profile-image.jpg') 45%;
+  background-size: cover;
+  position: relative;
+  min-height: 35rem;
+
+  @include media-breakpoint-down(lg) {
+    background-position: 50% 10%;
+  }
+
+  @include media-breakpoint-down(md) {
+    min-height: 25rem;
+  }
+
+  &__overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 8rem 0 3rem 0;
+    text-align: center;
+    background: linear-gradient(
+      15deg,
+      rgba($color-cyan-3, 1) 0%,
+      rgba($color-cyan-2, 0.75) 55%,
+      rgba($color-cyan-1, 0) 80%
+    );
+    @include media-breakpoint-down(lg) {
+      padding: 4rem 0 1rem 0;
+      background: linear-gradient(
+        5deg,
+        rgba($color-cyan-3, 1) 0%,
+        rgba($color-cyan-2, 0.75) 55%,
+        rgba($color-cyan-1, 0) 80%
+      );
+    }
+    @include media-breakpoint-down(md) {
+      padding-top: 3rem;
+    }
   }
 }
 
@@ -141,6 +184,10 @@ body {
   margin-bottom: 3rem;
   background: var(--brand-gradient);
   transition: 1s background-color ease;
+}
+
+.resume-navbar {
+  height: 3.5rem;
 }
 
 .resume-hello {
@@ -161,33 +208,61 @@ body {
   }
 }
 
-.resume-boxed {
-  @include font-size(1.5rem);
-  text-transform: uppercase;
-  letter-spacing: 0.025rem;
-  border: solid var(--brand-border);
+.resume-positions {
+  @include media-breakpoint-up(md) {
+    padding: 3rem 0 2rem;
+  }
+  @include media-breakpoint-down(md) {
+    padding: 2rem 0 1rem;
+  }
+}
 
-  @include media-breakpoint-up(lg) {
-    @include padding(0.5rem 3rem);
+.resume-boxed {
+  font-family: $font-condensed;
+  @include font-size(1.25rem);
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: solid var(--brand-dark);
+  color: var(--brand-dark);
+  margin: 0 0.5rem 0.5rem 0;
+
+  @include media-breakpoint-up(xl) {
+    @include padding(0.45rem 2.25rem);
     border-width: 3px;
   }
 
-  @include media-breakpoint-down(lg) {
-    @include font-size(1.25rem);
-    @include padding(0.3rem 2rem);
+  @include media-breakpoint-down(xl) {
+    @include padding(0.25rem 1.5rem);
     border-width: 2px;
   }
 
-  @include media-breakpoint-down(sm) {
-    @include font-size(1rem);
+  @include media-breakpoint-down(lg) {
+    @include font-size(1.125rem);
+    @include padding(0.25rem 1.25rem);
   }
 }
 
 .resume-description {
-  @include font-size(1.25rem);
+  font-style: italic;
+  @include font-size(1.125rem);
+  font-weight: 400;
+  line-height: 2.25rem;
+  text-align: justify;
 
   p {
     text-indent: 2rem;
+  }
+}
+
+.resume-contact-space {
+  padding: 3rem 0 2rem 0;
+  @include media-breakpoint-down(lg) {
+    padding: 1rem 0;
+  }
+  @include media-breakpoint-down(md) {
+    padding-bottom: 0.5rem;
   }
 }
 
@@ -199,30 +274,25 @@ body {
   align-items: center;
   list-style: none;
   padding: 0;
-  margin: 2rem 0;
-
-  @include media-breakpoint-between(sm, lg) {
-    align-items: flex-start;
-  }
+  color: var(--brand-light);
 
   li {
-    @include font-size(1.75rem);
-    @include padding(0.25rem);
+    @include font-size(1.25rem);
     font-weight: 400;
     display: block;
     margin: 0;
 
     @include media-breakpoint-down(xl) {
-      @include font-size(1.5rem);
+      @include font-size(1.25rem);
     }
   }
 
   a {
-    color: var(--bs-body-color);
     text-decoration: none;
     display: inline-block;
     transition: 0.2s color ease-in-out;
-    line-height: 2rem;
+    line-height: 2.5rem;
+    color: var(--brand-light);
 
     @include media-breakpoint-down(xl) {
       line-height: 1.75rem;
@@ -242,13 +312,14 @@ body {
     }
 
     &.link-lg {
-      font-weight: 600;
+      font-family: $font-head;
+      font-weight: 500;
 
       @include media-breakpoint-up(xl) {
-        @include font-size(2rem);
+        @include font-size(1.75rem);
       }
       @include media-breakpoint-down(xl) {
-        @include font-size(1.75rem);
+        @include font-size(1.5rem);
       }
     }
   }
@@ -257,7 +328,7 @@ body {
 .text-verified {
   @include font-size(1rem);
   text-align: center;
-  line-height: 1.2;
+  line-height: 2.5rem;
 }
 
 .resume-social {
@@ -265,72 +336,49 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2.25rem;
-
-  @include media-breakpoint-between(sm, lg) {
-    justify-content: flex-start;
-  }
-
-  @include media-breakpoint-down(md) {
-    margin-bottom: 1.5rem;
-  }
 
   a {
     --social-color: var(--brand-secondary);
-
-    color: var(--brand-primary);
-    transition: 0.5s color ease;
-
-    &:hover {
-      color: var(--social-color);
-    }
-  }
-}
-
-.resume-picture {
-  img {
-    width: 15rem;
-    margin: 0 auto;
-
-    @include media-breakpoint-down(xl) {
-      width: 80%;
-      max-width: 10rem;
-    }
-
-    @include media-breakpoint-down(md) {
-      max-width: 8rem;
-    }
+    color: var(--brand-light);
+    margin: 0 0.25rem;
   }
 }
 
 .resume-soft {
-  @include font-size(3rem);
-  font-weight: bold;
+  font-family: $font-head;
+  @include font-size(3.25rem);
+  font-weight: 700;
   line-height: 3rem;
   margin-block-start: 1rem;
   margin-block-end: 2.5rem;
 }
 
 .resume-timeline {
-  $logo-size: 5vw;
-  $line-gap-col: 1rem;
-  $line-gap-row: 1.5rem;
+  $logo-size: 70px;
+  $line-gap-col: 1.5rem;
+  $line-gap-row: 3rem;
 
   display: grid;
   row-gap: $line-gap-row;
   column-gap: $line-gap-col;
   grid-template-columns: auto auto 1fr;
 
+  @include media-breakpoint-down(lg) {
+    row-gap: math.div($line-gap-row, 1.5);
+    column-gap: math.div($line-gap-col, 1.5);
+  }
+
   &__company {
-    --dot-size: 12px;
+    --dot-size: 10px;
     --dot-primary: var(--brand-primary);
     --dot-secondary: var(--dot-primary);
+    --company-color: var(--dot-primary);
 
     display: contents;
 
     & *::selection {
       color: var(--dot-primary);
-      background: var(--dot-secondary);
+      background: var(--company-color);
     }
   }
 
@@ -386,7 +434,7 @@ body {
       height: var(--dot-size);
       position: absolute;
       left: 50%;
-      top: math.div($line-gap-row, 2);
+      top: math.div($line-gap-row, 3);
       transform: translate(-50%, -50%);
       z-index: 1;
 
@@ -418,7 +466,7 @@ body {
   }
 
   &__logo + &__dot {
-    --dot-size: 14px;
+    --dot-size: 16px;
 
     i {
       top: 50%;
@@ -426,6 +474,7 @@ body {
 
       &::before {
         background: #fff;
+        border-width: 2px;
       }
 
       &::after {
@@ -446,13 +495,17 @@ body {
   }
 
   &__name {
-    font-family: $font-condensed;
-    @include font-size(1.5rem);
+    font-family: $font-sans;
+    @include font-size(1.75rem);
     font-style: italic;
     align-self: center;
-    line-height: 1.5rem;
+    line-height: 2rem;
     position: relative;
-    font-weight: 500;
+    font-weight: 600;
+
+    @include media-breakpoint-down(lg) {
+      @include font-size(1.5rem);
+    }
 
     span {
       display: block;
@@ -460,13 +513,17 @@ body {
     }
 
     em {
+      font-family: $font-base;
+      font-weight: 400;
       position: absolute;
       left: 0;
       top: 100%;
       display: block;
-      font-size: 0.875rem;
-      font-weight: 400;
-      opacity: 0.75;
+      @include font-size(1rem);
+      opacity: 0.25;
+      @include media-breakpoint-down(lg) {
+        @include font-size(0.875rem);
+      }
     }
   }
 
@@ -478,6 +535,10 @@ body {
     text-align: center;
     letter-spacing: 0.025rem;
     color: var(--company-color);
+    @include font-size(1.125rem);
+    @include media-breakpoint-down(lg) {
+      @include font-size(1rem);
+    }
 
     [data-bs-theme='light'] & {
       filter: brightness(85%) contrast(125%);
@@ -489,24 +550,26 @@ body {
     margin-bottom: 0.75rem;
   }
 
-  .date-start {
-    @include font-size(0.875rem);
-  }
-
-  .date-current {
-    color: var(--bs-body-color);
-    font-weight: 600;
-    @include font-size(1.125rem);
-  }
-
   &__position {
     h4 {
-      font-weight: 600;
+      font-family: $font-head;
+      @include font-size(1.5rem);
+      font-weight: 400;
+      @include media-breakpoint-down(lg) {
+        @include font-size(1.25rem);
+      }
     }
 
     p {
-      line-height: 1.5;
+      line-height: 2.25rem;
       @include font-size(1.125rem);
+      font-style: italic;
+      text-align: justify;
+      margin-bottom: 0;
+      @include media-breakpoint-down(lg) {
+        @include font-size(1rem);
+        line-height: 2rem;
+      }
     }
   }
 }

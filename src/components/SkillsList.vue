@@ -40,8 +40,9 @@ const props = defineProps({
 @import '@/app.scss';
 
 .resume-header {
-  font-size: 1.5rem;
-  font-weight: 800;
+  font-family: $font-head;
+  @include font-size(1.75rem);
+  font-weight: 700;
   text-transform: uppercase;
   line-height: 3rem;
   margin-top: 1.5rem;
@@ -62,6 +63,7 @@ const props = defineProps({
     padding: 0;
     margin: 0;
     font-size: 1.125rem;
+    font-style: italic;
   }
 }
 </style>

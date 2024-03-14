@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand fixed-top bg-body-gradient">
     <div class="container">
-      <a class="navbar-brand mb-0 h1 text-light me-auto" href="/">szram.co</a>
+      <a class="navbar-brand mb-0 h1 text-light me-auto" href="/">resume.szram.co</a>
       <ul class="navbar-nav align-items-center">
         <template v-for="(link, key, index) in prop.links" :key="link.url + key + 'head'">
           <li

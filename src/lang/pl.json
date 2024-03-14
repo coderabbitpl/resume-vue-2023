@@ -4,9 +4,10 @@
   "welcome": "Witaj, jestem",
   "protected": "Ochrona przed spamem aktywna",
   "protecting": "Zabezpieczam przed spamem...",
+  "positions": ["Senior Frontend Developer", "Fullstack Web Developer"],
   "bio": [
-    "Mam ponad dekadę doświadczenia w obszarze web developmentu. Koncentruję się na projektowaniu i rozwijaniu responsywnych aplikacji internetowych, dostosowywanych do potrzeb biznesowych klienta. Zajmuję się architekturą środowisk aplikacji, opracowywaniem struktury aplikacji, wyborem optymalnych technologii oraz rozwiązaniami pozwalającymi zadbać o produktywność rozwoju i wydajność aplikacji. Projektuję strategie usprawniające procesy związane z wdrażaniem i rozwojem aplikacji. Dodatkowo, posiadam umiejętności w zakresie projektowania grafiki przeznaczonej do publikacji oraz web designu opartego na znajomości najnowszych trendów UX/UI.",
-    "Jako Fullstack Web Developer ze znajomością JS/TS, SASS/LESS, PHP/SQL posiadam wszechstronne doświadczenie w sektorze web developmentu i e-commerce. Jestem zaangażowanym, szybko uczącym się samoukiem. Rozumiem dobre praktyki programowania, stawiane przede mną cele biznesowe oraz wymagania projektowe klientów. Zawsze pozostaję otwarty na nowe wyzwania. Kocham piłkę nożną i jestem dumnym ojcem dwójki wspaniałych dzieci."
+    "Od dekady rozwijam się jako programista zdobywając doświadczenie w web developmentcie, specjalizując się w projektowaniu responsywnych aplikacji webowych dostosowanych do potrzeb biznesowych klientów. Jestem zaangażowanym, szybko uczącym się samoukiem. Rozumiem dobre praktyki programowania, stawiane przede mną cele biznesowe oraz wymagania projektowe klientów.",
+    "Gotowość do podejmowania wyzwań zawsze była moją cechą charakterystyczną. Ciekawi mnie wszystko co związane jest z web developmentem. Architektura aplikacji, rozwijanie/utrzymywanie kodu, optymalizacja i automatyzacja procesów oraz projektowanie  środowisk developerskich aby wykorzystywać technologie do zwiększania produktywność czy wydajność aplikacji.  Posiadam umiejętności graficzne poparte doświadczeniem zawodowym w UX/UI i rozumiem procesy projektowania materiałów przeznaczonych do druku/publikacji."
   ],
   "header": {
     "skills": "Umiejętności",
@@ -47,6 +48,7 @@
   },
   "city": {
     "gdz": "Grudziądz",
+    "waw": "Warszawa",
     "inWaw": "w Warszawie",
     "inGda": "w Gdańsku",
     "inGru": "w Grudziądzu"

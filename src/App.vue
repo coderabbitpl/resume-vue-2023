@@ -181,6 +181,46 @@
             <SkillsList :skills="data.skillsKeys" :title="$t('header.skills')" />
             <SkillsList :skills="data.technologyKeys" :title="$t('header.technologies')" />
             <SkillsList :skills="data.toolsKeys" :title="$t('header.tools')" />
+
+            <div class="resume-skills">
+              <h3
+                v-motion
+                :enter="{ x: 0, opacity: 1 }"
+                :initial="{ x: -50, opacity: 0 }"
+                class="resume-header"
+              >
+                {{ $t('header.courses') }}
+              </h3>
+              <ul class="resume-list resume-list--courses">
+                <li
+                  v-motion
+                  :delay="150"
+                  :enter="{ x: 0, opacity: 1 }"
+                  :initial="{ x: -50, opacity: 0 }"
+                >
+                  &#8222;{{ $t('courses.hybrid') }}&#8221;
+                  <small>12.2023 <strong>@LinkedIn Courses</strong></small>
+                </li>
+                <li
+                  v-motion
+                  :delay="200"
+                  :enter="{ x: 0, opacity: 1 }"
+                  :initial="{ x: -50, opacity: 0 }"
+                >
+                  &#8222;{{ $t('courses.scrum') }}&#8221;
+                  <small>11.2023 <strong>@LinkedIn Courses</strong></small>
+                </li>
+                <li
+                  v-motion
+                  :delay="250"
+                  :enter="{ x: 0, opacity: 1 }"
+                  :initial="{ x: -50, opacity: 0 }"
+                >
+                  &#8222;{{ $t('courses.architecture') }}&#8221;
+                  <small>11.2023 <strong>@LinkedIn Courses</strong></small>
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="col col-lg-8 ps-lg-5 col-12 order-lg-1 order-0">
             <h2

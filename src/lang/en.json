@@ -6,14 +6,15 @@
   "protecting": "Guarding against spam...",
   "positions": ["Senior Frontend Developer", "Fullstack Web Developer"],
   "bio": [
-    "I have over a decade of experience in the field of web development. I focus on designing and developing responsive web applications tailored to the business needs of clients. My expertise includes application architecture, developing application structures, choosing optimal technologies, and implementing solutions to ensure the productivity and performance of applications. I design strategies to streamline processes related to the deployment and development of applications. Additionally, I possess skills in designing graphics for publication and web design based on knowledge of the latest UX/UI trends.",
-    "As a Fullstack Web Developer with proficiency in JS/TS, SASS/LESS, PHP/SQL, I have versatile experience in the web development and e-commerce sectors. I am a dedicated, fast-learning self-learner. I understand best programming practices, prioritize business goals, and meet client project requirements. I am always open to new challenges. I love soccer and am a proud father of two wonderful children."
+    "For a decade, I have been developing my skills as a programmer, gaining experience in web development, specializing in designing responsive web applications tailored to the business needs of clients. I am an engaged, self-taught learner, understanding good programming practices, business goals, and client project requirements.",
+    "My readiness to tackle challenges has always been my hallmark. I'm intrigued by all aspects of web development, from application architecture to code development/maintenance, optimization, and process automation. I also have graphic design skills supported by professional experience in UX/UI and understand the processes of designing materials for print/publication."
   ],
   "header": {
     "skills": "Skills",
     "technologies": "Technologies",
     "tools": "Tools",
-    "experience": "Experience"
+    "experience": "Experience",
+    "courses": "Courses"
   },
   "skills": {
     "scrum": "Working in Scrum/Agile",
@@ -46,6 +47,11 @@
     "ciCd": "CI/CD",
     "nodeNpm": "NODE/NPM"
   },
+  "courses": {
+    "hybrid": "Be an Effective Hybrid or Remote Worker",
+    "scrum": "Scrum: Advanced",
+    "architecture": "Fundamentals of Software Architecture"
+  },
   "city": {
     "gdz": "Grudziadz",
     "waw": "Warsaw",
@@ -58,24 +64,24 @@
   },
   "jobs": {
     "raiffeisen": {
-      "senior": "In my role, I was responsible for maintaining and developing an internal CRM web application for internal bank employees to serve clients from across Europe. This involved ensuring the highest quality of application code, designing and implementing solutions in collaboration with UX designers. I consistently focused on achieving a minimum 80% unit test coverage for the entire source code of the application.",
-      "mid": "In my role, I was responsible for maintaining and developing an internal CRM web application for internal bank employees to serve clients from across Europe. This involved ensuring the highest quality of application code, designing and implementing solutions in collaboration with UX designers. I consistently focused on achieving a minimum 80% unit test coverage for the entire source code of the application."
+      "senior": "Maintained and developed internal CRM application for bank employees, ensuring support for clients across Europe. Ensured highest quality of application code, collaborated with UX designers on solution design and implementation. Focused on achieving at least 80% test coverage with unit tests.",
+      "mid": "Advanced development of Angular framework, NgXS, and comprehensive understanding of Material Design system. Utilized key project tools to meet requirements and achieve business goals. Developed skills necessary for advancement to higher positions."
     },
     "stabilis": {
-      "lead": "I was responsible for the complete technological transformation of web applications. I oversaw the transformation process, actively participated in technology selection, strategy planning, and recruitment processes. I rewrote applications from Polymer to the Vue framework while maintaining total integrity. I designed an application for drawing graphs based on BPMN 2.0 standards. This tool enabled the creation of optimized processes, significantly improving the efficiency of production halls for one of the leading manufacturers in the construction and metallurgical industry in Poland."
+      "lead": "Responsible for comprehensive technological transformation of web applications, from technology selection to strategic planning. Rewrote application from Polymer to Vue framework, maintaining full system integrity. Designed application for creating graphs compliant with BPMN 2.0 standards, significantly improving production efficiency."
     },
     "movecloser": {
-      "fullstack": "I was responsible for overseeing project teams, with a primary focus on ensuring high-quality code delivery and efficient collaboration. As a team coordinator, I ensured coherence in technology selection and the effectiveness of team activities. I actively organized training sessions aimed at standardizing developers' approaches, eliminating errors, and enhancing the team's skills. My duties included comprehensive coordination throughout project implementation, from preparing the team environment to production deployment."
+      "fullstack": "Supervision of project teams, ensuring high-quality code and effective collaboration. Technological coordination of projects, organizing training for developers. Comprehensive coordination of project implementation, from preparing the team's environment to production deployment."
     },
     "coderabbit": {
-      "fullstack": "In my role as a Fullstack Developer in self-employment, I was responsible for the entire organizational process of projects. This encompassed designing architecture, implementation, deployment, and direct communication with clients. My responsibilities covered both technical and relational aspects, ensuring comprehensive project support. I prioritized efficiency, high-quality code, and client satisfaction through close collaboration and transparency in the project implementation process.",
+      "fullstack": "Responsible for the full project lifecycle, including architecture design, implementation, deployment, and direct client communication. Provided comprehensive project support by managing both technical aspects (coding, testing, deployment) and team relationships. Focus on work efficiency, maintaining high code quality, and ensuring client satisfaction through close collaboration and transparency in the project execution process.",
       "selfEmployed": "Self-employed"
     },
     "flash-media": {
-      "developer": "I had the opportunity to design, create, and maintain numerous web projects. My skills encompassed PHP, HTML, CSS, and JavaScript, and my work demonstrated professionalism and a commitment to quality in every project. Collaborating with graphic tools such as Photoshop and Illustrator, I developed eye-catching and practical solutions. Working at Flash-Media was a significant milestone in my career as a web developer, as it allowed me to gain valuable experience in designing and building various web projects while enhancing my programming and user interface design skills."
+      "developer": "Designing, creating, and maintaining numerous web projects using PHP, HTML, CSS, and JavaScript. Collaborating with graphic tools such as Photoshop and Illustrator to create attractive and functional solutions. Gaining valuable experience in designing and building various web projects, enhancing programming skills, and user interface design."
     },
     "info-biz": {
-      "itspecialist": "In collaboration with the educational agency, I was responsible for office-related tasks and preparing technological equipment for training sessions. I designed the agency's website and was in charge of purchasing necessary equipment for training purposes. Initially assisting in the implementation of training plans, I eventually gained the opportunity to independently conduct educational workshops on website design."
+      "itspecialist": "Collaborated with an educational agency, handling office duties and preparing technological equipment for training sessions. I designed the agency's website and managed the purchase of necessary equipment for training purposes. Initially assisting with training plans, I gained the opportunity to independently conduct educational sessions on website design."
     }
   },
   "dates": {

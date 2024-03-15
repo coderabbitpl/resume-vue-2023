@@ -13,7 +13,8 @@
     "skills": "Umiejętności",
     "technologies": "Technologie",
     "tools": "Narzędzia",
-    "experience": "Doświadczenie"
+    "experience": "Doświadczenie",
+    "courses": "Kursy"
   },
   "skills": {
     "scrum": "Praca w Scrum/Agile",
@@ -45,6 +46,11 @@
     "webpackBabel": "Webpack/Babel",
     "ciCd": "CI/CD",
     "nodeNpm": "NODE/NPM"
+  },
+  "courses": {
+    "hybrid": "Bądź efektywnym hybrydowym lub wirtualnym pracownikiem",
+    "scrum": "Scrum: Zaawansowany",
+    "architecture": "Podstawy architektury oprogramowania"
   },
   "city": {
     "gdz": "Grudziądz",

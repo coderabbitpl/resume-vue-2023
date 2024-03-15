@@ -574,6 +574,46 @@ body {
   }
 }
 
+.resume-header {
+  font-family: $font-head;
+  @include font-size(1.75rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 3rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.resume-list {
+  display: block;
+  padding: 0;
+  margin: 0 0 3rem;
+  list-style: none;
+  line-height: 2.25rem;
+  font-size: 1rem;
+  margin-block-start: 1rem;
+  margin-block-end: 1.5rem;
+
+  &--courses {
+    line-height: 2rem;
+  }
+
+  small {
+    display: block;
+    font-size: 0.875rem;
+    font-style: italic;
+    font-family: $font-base;
+    margin-bottom: 1.5rem;
+  }
+
+  li {
+    padding: 0;
+    margin: 0;
+    font-size: 1.125rem;
+    font-style: italic;
+  }
+}
+
 .nav-item--lang {
   width: 2.2rem;
 }

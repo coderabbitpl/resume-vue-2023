@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 28.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" x="0px"
-     y="0px"
-     viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+	 y="0px"
+	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#1A2BE6;}
-	.st1{fill:#FFFFFF;}
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#ffffff;}
 </style>
-    <polygon id="polygon2231" class="st0" points="0,0 100,0 100,100 0,100 "/>
-    <g>
-	<path class="st1" d="M15.6,64.7l20.2-29.3h8.9L18.8,64.7H15.6z M71.3,35.3H61.2l-22,29.3h8.9L71.3,35.3z M75,55.5l-11.4,9.2h10.6
-		l12.2-9.3L75,55.5L75,55.5z"/>
-        <path class="st1" d="M48.1,64.7h-8.9l-3.4-29.3h8.9L48.1,64.7z M74.2,64.7l-3-29.3h-10l2.5,29.3H74.2z"/>
-</g>
+    <polygon class="st0" points="73.4,56.8 71.2,35.4 71.3,35.3 61.2,35.3 46.9,54.3 44.7,35.4 35.8,35.4 15.6,64.7 18.8,64.7
+	36.8,44.3 39.2,64.7 48.1,64.7 48.1,64.6 62.2,46.8 63.7,64.6 63.6,64.7 63.7,64.7 74.2,64.7 86.4,55.4 75,55.5 "/>
 </svg>

@@ -234,13 +234,7 @@
 
             <div class="resume-timeline">
               <template v-for="(company, c) in data.experience">
-                <div
-                  :style="{
-                    '--dot-primary': company.companyColor,
-                    '--company-color': company.companyColorText
-                  }"
-                  class="resume-timeline__company"
-                >
+                <div :style="company.companyStyle" class="resume-timeline__company">
                   <div class="resume-timeline__logo">
                     <img :src="company.companyLogo" alt="" />
                   </div>
@@ -293,11 +287,11 @@
                     </div>
                     <div
                       :style="{
-                        '--dot-secondary':
+                        '--company-dot-next':
                           p === company.positions?.length - 1 &&
-                          !!data.experience?.[c + 1]?.companyColor
-                            ? data.experience[c + 1].companyColor
-                            : company.companyColor
+                          !!data.experience?.[c + 1]?.companyStyle?.['--company-dot']
+                            ? data.experience[c + 1].companyStyle?.['--company-dot']
+                            : company.companyStyle?.['--company-dot']
                       }"
                       class="resume-timeline__dot"
                     >
@@ -449,11 +443,11 @@ const data = reactive({
       title: 'linkedin.com/in/patryk-szram'
     },
     pdf: {
-      download: computed(() => `awesome-resume-${language.value}.pdf`),
+      download: computed(() => `awesome-resume-${language.value}-compress.pdf`),
       target: '_self',
       icon: 'bi-download',
       style: { '--social-color': 'var(--brand-secondary)' },
-      url: computed(() => `/awesome-resume-${language.value}.pdf`),
+      url: computed(() => `/awesome-resume-${language.value}-compress.pdf`),
       title: language.value === 'en' ? 'Download my resume in PDF' : 'Pobierz CV jako PDF'
     }
   },
@@ -461,8 +455,7 @@ const data = reactive({
     {
       companyName: 'Raiffeisen Bank International AG',
       companyLogo: logoRaiffeisen,
-      companyColor: '#fee600',
-      companyColorText: '#d7d3b4',
+      companyStyle: { '--company-color': '#fee600', '--company-dot': '#fee600' },
       companyLocation: computed(() => `${t('city.inWaw')}, ${t('country.pl')}`),
       companyDate: computed(() => calculatePeriod('2020-05', '2023-12')),
       positions: [
@@ -489,11 +482,9 @@ const data = reactive({
     {
       companyName: 'STABILIS.IO®',
       companyLogo: logoStabilis,
-      companyColor: '#60ffff',
-      companyColorText: '#b1d7d7',
+      companyStyle: { '--company-color': '#241B3F', '--company-dot': '#60ffff' },
       companyLocation: computed(() => `${t('city.inWaw')}, ${t('country.pl')}`),
       companyDate: computed(() => calculatePeriod('2018-11', '2020-05')),
-
       positions: [
         {
           positionName: 'Lead Frontend Developer',
@@ -509,8 +500,7 @@ const data = reactive({
     {
       companyName: 'Move Closer',
       companyLogo: logoMoveCloser,
-      companyColor: '#1a2be6',
-      companyColorText: '#bfc1df',
+      companyStyle: { '--company-color': '#1a2be6', '--company-dot': '#1a2be6' },
       companyLocation: computed(() => `${t('city.inWaw')}, ${t('country.pl')}`),
       companyDate: computed(() => calculatePeriod('2017-03', '2018-11')),
       positions: [
@@ -528,8 +518,7 @@ const data = reactive({
     {
       companyName: 'Coderabbit',
       companyLogo: logoCodeRabbit,
-      companyColor: '#23476b',
-      companyColorText: '#7294b5',
+      companyStyle: { '--company-color': '#23476b', '--company-dot': '#bad135' },
       companyLocation: computed(() => `${t('city.inWaw')}, ${t('country.pl')}`),
       companyDate: computed(() => calculatePeriod('2015-11', '2017-03')),
       positions: [
@@ -547,8 +536,7 @@ const data = reactive({
     {
       companyName: 'Flash-Media',
       companyLogo: logoFlashMedia,
-      companyColor: '#ffd200',
-      companyColorText: '#d0c490',
+      companyStyle: { '--company-color': '#ffd200', '--company-dot': '#ffd200' },
       companyLocation: computed(() => `${t('city.inGda')}, ${t('country.pl')}`),
       companyDate: computed(() => calculatePeriod('2011-11', '2015-11')),
       positions: [
@@ -566,8 +554,7 @@ const data = reactive({
     {
       companyName: 'Info-Biz Profesjonalna Edukacja',
       companyLogo: logoInfoBiz,
-      companyColor: '#e73f12',
-      companyColorText: '#ce8f7e',
+      companyStyle: { '--company-color': '#e73f12', '--company-dot': '#e73f12' },
       companyLocation: computed(() => `${t('city.inGru')}, ${t('country.pl')}`),
       companyDate: computed(() => calculatePeriod('2009-06', '2011-11')),
       positions: [

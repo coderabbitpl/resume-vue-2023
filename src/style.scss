@@ -72,6 +72,7 @@
     --brand-scroll-border: #{$brand-scroll-border};
     --brand-selection: #{$brand-selection};
     --brand-gradient: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+    --bs-body-bg: #{$brand-dark};
   }
 }
 
@@ -224,8 +225,8 @@ body {
   font-style: italic;
   text-transform: uppercase;
   letter-spacing: 1px;
-  border: solid var(--brand-dark);
-  color: var(--brand-dark);
+  border: solid var(--bs-body-color);
+  color: var(--bs-body-color);
   margin: 0 0.5rem 0.5rem 0;
 
   @include media-breakpoint-up(xl) {
@@ -370,14 +371,14 @@ body {
 
   &__company {
     --dot-size: 10px;
-    --dot-primary: var(--brand-primary);
-    --dot-secondary: var(--dot-primary);
-    --company-color: var(--dot-primary);
+    --company-color: var(--brand-primary);
+    --company-dot: var(--company-dot);
+    --company-dot-next: var(--company-dot);
 
     display: contents;
 
     & *::selection {
-      color: var(--dot-primary);
+      color: var(--company-dot);
       background: var(--company-color);
     }
   }
@@ -385,16 +386,13 @@ body {
   &__logo {
     width: $logo-size;
     max-width: rfs-value(100px);
+    background: var(--company-color);
 
     img {
       border: transparent 1px solid;
       width: 100%;
       max-width: rfs-value(100px);
       min-width: rfs-value(70px);
-
-      [data-bs-theme='dark'] & {
-        border-color: var(--brand-dark);
-      }
     }
   }
 
@@ -419,7 +417,7 @@ body {
       transform: translateX(-50%);
       width: var(--color-line-size);
       height: calc(100% + $line-gap-row);
-      background: linear-gradient(to bottom, var(--dot-primary) 50%, var(--dot-secondary));
+      background: linear-gradient(to bottom, var(--company-dot) 50%, var(--company-dot-next));
     }
 
     &--first::after {
@@ -444,8 +442,8 @@ body {
         width: var(--dot-size);
         height: var(--dot-size);
         border-radius: 50%;
-        background: var(--dot-primary);
-        border: 1px solid var(--dot-primary);
+        background: var(--company-dot);
+        border: 1px solid var(--company-dot);
       }
 
       &::after {
@@ -457,7 +455,7 @@ body {
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%) scale(1);
-        background: var(--dot-primary);
+        background: var(--company-dot);
         z-index: -1;
         border-radius: 50%;
         opacity: 0;
@@ -473,7 +471,7 @@ body {
       transform: translate(-50%, -50%);
 
       &::before {
-        background: #fff;
+        background: var(--bs-body-bg);
         border-width: 2px;
       }
 
@@ -534,14 +532,12 @@ body {
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 0.025rem;
-    color: var(--company-color);
+    color: var(--bs-body-color);
+    opacity: 0.5;
+
     @include font-size(1.125rem);
     @include media-breakpoint-down(lg) {
       @include font-size(1rem);
-    }
-
-    [data-bs-theme='light'] & {
-      filter: brightness(85%) contrast(125%);
     }
   }
 

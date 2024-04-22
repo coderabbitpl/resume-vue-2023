@@ -236,7 +236,9 @@
               <template v-for="(company, c) in data.experience">
                 <div :style="company.companyStyle" class="resume-timeline__company">
                   <div class="resume-timeline__logo">
-                    <img :src="company.companyLogo" alt="" />
+                    <div class="company-color">
+                      <img :src="company.companyLogo" alt="" />
+                    </div>
                   </div>
                   <div
                     :class="{ 'resume-timeline__dot--first': c === 0 }"
@@ -314,6 +316,24 @@
                       >
                         {{ position.positionDesc }}
                       </p>
+                      <ul
+                        class="resume-timeline__position__stack"
+                        v-motion
+                        :delay="650 + 200 * c + 200 * p"
+                        :enter="{ x: 0, opacity: 1 }"
+                        :initial="{ x: 100, opacity: 0 }"
+                      >
+                        <template v-for="(stack, s) in position.positionStack">
+                          <li
+                            v-motion
+                            :delay="650 + 200 * c + 200 * p + s * 50"
+                            :enter="{ x: 0, opacity: 1 }"
+                            :initial="{ x: 50, opacity: 0 }"
+                          >
+                            {{ stack }}
+                          </li>
+                        </template>
+                      </ul>
                     </div>
                   </template>
                 </div>
@@ -466,7 +486,8 @@ const data = reactive({
             current: true, // TODO: pls change that
             end: computed(() => `${t('months.dec').slice(0, 3)} 2023`),
             start: computed(() => `${t('months.jun').slice(0, 3)} 2021`)
-          }
+          },
+          positionStack: ['TS', 'Angular', 'RxJS', 'NGXS', 'LESS', 'Karma', 'Docker', 'Nginx']
         },
         {
           positionName: 'Frontend Developer',
@@ -475,7 +496,8 @@ const data = reactive({
             current: false,
             end: computed(() => `${t('months.jun').slice(0, 3)} 2021`),
             start: computed(() => `${t('months.may').slice(0, 3)} 2020`)
-          }
+          },
+          positionStack: ['TS', 'Angular', 'RxJS', 'NGXS', 'LESS', 'Karma']
         }
       ]
     },
@@ -493,7 +515,18 @@ const data = reactive({
             current: false,
             end: computed(() => `${t('months.may').slice(0, 3)} 2020`),
             start: computed(() => `${t('months.nov').slice(0, 3)} 2018`)
-          }
+          },
+          positionStack: [
+            'TS',
+            'PHP',
+            'Vue',
+            'Vuex',
+            'SCSS',
+            'Webpack',
+            'Jasmine',
+            'Electron',
+            'Docker'
+          ]
         }
       ]
     },
@@ -511,7 +544,8 @@ const data = reactive({
             current: false,
             end: computed(() => `${t('months.nov').slice(0, 3)} 2018`),
             start: computed(() => `${t('months.mar').slice(0, 3)} 2017`)
-          }
+          },
+          positionStack: ['JS', 'PHP', 'Vue', 'SCSS', 'Laravel', 'Wordpress', 'Prestashop']
         }
       ]
     },
@@ -529,7 +563,8 @@ const data = reactive({
             current: false,
             end: computed(() => `${t('months.nov').slice(0, 3)} 2017`),
             start: computed(() => `${t('months.mar').slice(0, 3)} 2015`)
-          }
+          },
+          positionStack: ['TS', 'JS', 'PHP', 'Vue', 'jQuery', 'SASS', 'Wordpress', 'Woocommerce']
         }
       ]
     },
@@ -547,7 +582,8 @@ const data = reactive({
             current: false,
             end: computed(() => `${t('months.mar').slice(0, 3)} 2015`),
             start: computed(() => `${t('months.nov').slice(0, 3)} 2011`)
-          }
+          },
+          positionStack: ['JS', 'PHP', 'SQL', 'CSS', 'jQuery', 'Wordpress']
         }
       ]
     },
@@ -565,7 +601,8 @@ const data = reactive({
             current: false,
             end: computed(() => `${t('months.nov').slice(0, 3)} 2011`),
             start: computed(() => `${t('months.jun').slice(0, 3)} 2009`)
-          }
+          },
+          positionStack: ['JS', 'PHP', 'CSS', 'jQuery', 'Wordpress', 'Photoshop', 'Illustrator']
         }
       ]
     }

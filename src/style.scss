@@ -386,7 +386,10 @@ body {
   &__logo {
     width: $logo-size;
     max-width: rfs-value(100px);
-    background: var(--company-color);
+
+    .company-color {
+      background: var(--company-color);
+    }
 
     img {
       border: transparent 1px solid;
@@ -565,6 +568,27 @@ body {
       @include media-breakpoint-down(lg) {
         @include font-size(1rem);
         line-height: 2rem;
+      }
+    }
+
+    &__stack {
+      display: flex;
+      padding: 0;
+      margin: 1rem 0 0;
+      list-style: none;
+      gap: 0.5rem;
+      line-height: 0.75rem;
+      color: color-mix(in srgb, var(--company-dot), var(--bs-body-color) 25%);
+
+      li {
+        display: block;
+        border: 1px solid color-mix(in srgb, var(--company-dot), var(--bs-body-color) 10%);
+        min-width: 3rem;
+        text-align: center;
+        padding: 0.2rem 0.25rem 0.15rem 0.25rem;
+        font-size: 0.75rem;
+        border-radius: 0.25rem;
+        line-height: 0.75rem;
       }
     }
   }

@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand fixed-top bg-body-gradient">
     <div class="container">
-      <a class="navbar-brand mb-0 h1 text-light me-auto" href="/">resume.szram.co</a>
+      <a class="navbar-brand mb-0 h1 text-light me-auto" href="/"> resume.szram.co </a>
       <ul class="navbar-nav align-items-center">
         <template v-for="(link, key, index) in prop.links" :key="link.url + key + 'head'">
           <li
@@ -84,11 +84,6 @@ const prop = defineProps(['links'])
 const languageToggled = ref(false)
 
 const changeLanguage = (lang: string) => {
-  switch (lang) {
-    default:
-    case 'pl':
-      break
-  }
   emit('beforeChange')
   localStorage.setItem(LocalStoreKey, lang)
   language.value = lang
@@ -113,5 +108,11 @@ onMounted(() => {
 
 .bg-body-gradient {
   background: var(--brand-gradient);
+}
+
+.navbar-brand {
+  @media (max-width: 400px) {
+    display: none;
+  }
 }
 </style>

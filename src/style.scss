@@ -191,24 +191,6 @@ body {
   height: 3.5rem;
 }
 
-.resume-hello {
-  font-family: $font-head;
-  @include font-size(6rem);
-  font-weight: 800;
-  background: var(--brand-gradient);
-  color: transparent;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  @include media-breakpoint-down(xl) {
-    @include font-size(5rem);
-  }
-
-  @include media-breakpoint-down(lg) {
-    text-align: center;
-  }
-}
-
 .resume-positions {
   @include media-breakpoint-up(md) {
     padding: 3rem 0 2rem;
@@ -374,12 +356,16 @@ body {
     --company-color: var(--brand-primary);
     --company-dot: var(--company-dot);
     --company-dot-next: var(--company-dot);
+    --company-highlight-bg: var(--company-color);
+    --company-highlight-color: var(--company-dot);
+    --company-position-color: color-mix(in srgb, var(--company-dot), var(--bs-body-color) 15%);
+    --company-stack-color: var(--brand-gray);
 
     display: contents;
 
     & *::selection {
-      color: var(--company-dot);
-      background: var(--company-color);
+      color: var(--company-highlight-color);
+      background: var(--company-highlight-bg);
     }
   }
 
@@ -511,6 +497,7 @@ body {
     span {
       display: block;
       position: relative;
+      top: 0.125rem;
     }
 
     em {
@@ -518,7 +505,7 @@ body {
       font-weight: 400;
       position: absolute;
       left: 0;
-      top: 100%;
+      top: 90%;
       display: block;
       @include font-size(1rem);
       opacity: 0.25;
@@ -551,6 +538,7 @@ body {
 
   &__position {
     h4 {
+      color: var(--company-position-color);
       font-family: $font-head;
       @include font-size(1.5rem);
       font-weight: 400;
@@ -578,19 +566,37 @@ body {
       list-style: none;
       gap: 0.5rem;
       line-height: 0.75rem;
-      color: color-mix(in srgb, var(--company-dot), var(--bs-body-color) 25%);
+      color: var(--company-stack-color);
 
       li {
         display: block;
-        border: 1px solid color-mix(in srgb, var(--company-dot), var(--bs-body-color) 10%);
+        border: 1.5px solid var(--company-stack-color);
         min-width: 3rem;
         text-align: center;
-        padding: 0.2rem 0.25rem 0.15rem 0.25rem;
-        font-size: 0.75rem;
+        padding: 0.35rem 0.25rem 0.15rem 0.25rem;
+        font-size: 0.875rem;
         border-radius: 0.25rem;
-        line-height: 0.75rem;
+        line-height: 0.875rem;
       }
     }
+  }
+}
+
+.resume-hello {
+  font-family: $font-head;
+  @include font-size(6rem);
+  font-weight: 800;
+  background: var(--brand-gradient);
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @include media-breakpoint-down(xl) {
+    @include font-size(5rem);
+  }
+
+  @include media-breakpoint-down(lg) {
+    text-align: center;
   }
 }
 
@@ -600,7 +606,7 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   line-height: 3rem;
-  margin-top: 2.5rem;
+  margin-top: 1.75rem;
   margin-bottom: 1rem;
 }
 

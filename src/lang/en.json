@@ -63,6 +63,9 @@
     "pl": "Poland"
   },
   "jobs": {
+    "eagerdevs": {
+      "senior": "Under the wing of EagerDevs, I had the opportunity to work in a team responsible for designing a dedicated design system for a client from one of the Arab countries. The design system was based on the Stencil library, which compiled the components we developed into Angular technology. Using Storybook, we presented all possible configurations of components to the client, who then implemented our design system in their applications."
+    },
     "raiffeisen": {
       "senior": "Maintained and developed internal CRM application for bank employees, ensuring support for clients across Europe. Ensured highest quality of application code, collaborated with UX designers on solution design and implementation. Focused on achieving at least 80% test coverage with unit tests.",
       "mid": "Advanced development of Angular framework, NgXS, and comprehensive understanding of Material Design system. Utilized key project tools to meet requirements and achieve business goals. Developed skills necessary for advancement to higher positions."

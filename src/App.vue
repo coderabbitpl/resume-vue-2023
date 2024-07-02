@@ -355,6 +355,7 @@ import { computed, nextTick, onMounted, reactive, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import dayjs from 'dayjs'
 import duration from 'dayjs/plugin/duration'
+import logoEagerdevs from '@/assets/eagerdevs.png'
 import logoRaiffeisen from '@/assets/logo-raiffeisen.svg'
 import logoStabilis from '@/assets/logo-stabilis.svg'
 import logoMoveCloser from '@/assets/logo-movecloser.svg'
@@ -389,9 +390,9 @@ const contactEmail = ref('patryk@szram.co')
 
 // const currentLocation = `${t('city.waw')}, ${t('country.pl')}`
 
-function calculatePeriod(start: string, end: string) {
+function calculatePeriod(start: string, end?: string) {
   const startDate = dayjs(start)
-  const endDate = dayjs(end)
+  const endDate = end ? dayjs(end) : dayjs()
 
   if (startDate.isAfter(endDate)) {
     console.error('StartDate should be earlier than EndDate')
@@ -473,9 +474,35 @@ const data = reactive({
   },
   experience: [
     {
+      companyName: 'EagerDevs',
+      companyLogo: logoEagerdevs,
+      companyStyle: {
+        '--company-color': '#fff',
+        '--company-dot': '#2e74ff',
+        '--company-highlight-bg': '#061049'
+      },
+      companyLocation: computed(() => `${t('city.inWaw')}, ${t('country.pl')}`),
+      companyDate: computed(() => calculatePeriod('2024-06')),
+      positions: [
+        {
+          positionName: 'Senior Frontend Developer',
+          positionDesc: computed(() => t('jobs.eagerdevs.senior')),
+          positionDate: {
+            current: true, // TODO: pls change that
+            end: computed(() => t('dates.present')),
+            start: computed(() => `${t('months.jun').slice(0, 3)} 2024`)
+          },
+          positionStack: ['TS', 'Stencil', 'Storybook', 'Angular', 'Web Components', 'SCSS']
+        }
+      ]
+    },
+    {
       companyName: 'Raiffeisen Bank International AG',
       companyLogo: logoRaiffeisen,
-      companyStyle: { '--company-color': '#fee600', '--company-dot': '#fee600' },
+      companyStyle: {
+        '--company-color': '#fee600',
+        '--company-dot': '#fee600'
+      },
       companyLocation: computed(() => `${t('city.inWaw')}, ${t('country.pl')}`),
       companyDate: computed(() => calculatePeriod('2020-05', '2023-12')),
       positions: [
@@ -483,7 +510,7 @@ const data = reactive({
           positionName: 'Senior Frontend Developer',
           positionDesc: computed(() => t('jobs.raiffeisen.senior')),
           positionDate: {
-            current: true, // TODO: pls change that
+            current: false,
             end: computed(() => `${t('months.dec').slice(0, 3)} 2023`),
             start: computed(() => `${t('months.jun').slice(0, 3)} 2021`)
           },

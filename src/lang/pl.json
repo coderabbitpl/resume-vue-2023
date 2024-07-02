@@ -63,6 +63,9 @@
     "pl": "Polska"
   },
   "jobs": {
+    "eagerdevs": {
+      "senior": "Pod skrzydłami EagerDevs miałem okazję pracować w zespole odpowiedzialnym za projektowanie dedykowanego design systemu na zlecenie jednego z krajów arabskich. Design system projektowany był w oparciu o bibliotekę Stencil, która odpowiadała za kompilację napisanych przez nas komponentów do technologii Angular. Za pomocą Storybook prezentowaliśmy wszystkie sposoby konfiguracji komponentów dla klienta, który następnie implementował nasz design system w swoich aplikacjach."
+    },
     "raiffeisen": {
       "senior": "Do moich kluczowych obowiązków należało utrzymanie i rozwój wewnętrznej aplikacji internetowej CRM przeznaczonej dla wewnętrznych pracowników banku do obsługi klientów z całej europy. Zapewnienie najwyższej jakości kodu aplikacji, projektowanie i implementacja rozwiązań we współpracy z UX designerem. Bezustanna dbałość o pokrycie testami jednostkowymi na poziomie minimum 80% całego kodu źródłowego aplikacji.",
       "mid": "Przed rozpoczęciem współpracy na stanowisku posiadałem wyłącznie teoretyczną wiedzę o technologii. Do pracy niezbędna była biegła znajomość frameworka Angular, NgXS oraz całkowite pojęcie zagadnień design systemu Material Design. To wszystko wraz z obsługą wszystkich narzędzi dookoła projektu stanowiło o wypełnieniu wszystkich wymagań i osiągnięcie stawianych przede mną celów biznesowych potrzebnych do uzyskania awansu na stanowisku."
